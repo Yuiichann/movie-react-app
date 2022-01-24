@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import HeroSlide from 'components/HeroSlide/HeroSlide';
 
 Catalog.propTypes = {
     
@@ -8,7 +9,7 @@ Catalog.propTypes = {
 function Catalog(props) {
     return (
         <div>
-            Category
+            <HeroSlide page="2" />
         </div>
     );
 }

@@ -17,7 +17,7 @@ function Button(props) {
     );
 }
 
-function OutlineButton(props) {
+export function OutlineButton(props) {
     return (
         <Button
             className={`btn-outline ${props.className}`} 

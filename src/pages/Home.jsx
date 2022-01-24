@@ -1,19 +1,20 @@
-import React, { useState } from 'react';
+import React, { Suspense, useState } from 'react';
 import PropTypes from 'prop-types';
-import Button from '../components/Button/Button';
-import Modal, { ModalContent } from '../components/Modal/Modal';
+// import HeroSlide from 'components/HeroSlide/HeroSlide';
+
+const HeroSlide = React.lazy(() => import('components/HeroSlide/HeroSlide'))
 
 Home.propTypes = {
-    
+
 };
 
 function Home(props) {
 
-
-
     return (
         <>
-            Home
+            <Suspense fallback={<div>Loading ... </div>}>
+                <HeroSlide page="1" />
+            </Suspense>
         </>
     );
 }

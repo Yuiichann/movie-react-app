@@ -5,6 +5,7 @@ import './Modal.scss';
 Modal.propTypes = {
     active: PropTypes.bool,
     id: PropTypes.string,
+    onClose: PropTypes.func
 };
 
 function Modal(props) {
@@ -15,8 +16,22 @@ function Modal(props) {
         setActive(props.active);
     }, [props.active])
     
+    const handleClickModal = (e) => {
+        const item = e.target.closest('.active')
+
+        if (item) {
+            e.target.classList.toggle('active')
+
+            if (props.onClose) props.onClose();
+        }
+    }
+
     return (
-        <div id={props.id} className={`modal ${active ? 'active' : ''}`}>
+        <div 
+            id={props.id} 
+            className={`modal ${active ? 'active' : ''}`}
+            onClick={(e) => handleClickModal(e)}
+        >
             {props.children}     
         </div>
     );
@@ -32,9 +47,8 @@ export const ModalContent = props => {
     }
 
     return (
-        <div ref={contentRef} className="modal-content">
+        <div ref={contentRef} className="modal__content">
             {props.children}
-            asdfasdf
             <div className="modal__content__close" onClick={closeModal}>
                 <i className="bx bx-x"></i>
             </div>
