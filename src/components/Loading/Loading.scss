@@ -1,0 +1,11 @@
+@use 'scss' as *;
+
+.loading-icon {
+    width: 100%;
+    min-height: 230px;
+    @include flex(center, center);
+
+    img {
+        width: 150px;
+    }
+}

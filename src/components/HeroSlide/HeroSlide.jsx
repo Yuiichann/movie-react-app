@@ -125,7 +125,15 @@ function TrailerModal(props) {
     return (
         <Modal active={false} id={`modal_${item.id}`} onClose={onClose}>
             <ModalContent onClose={onClose}>
-                <iframe ref={iframeRef} width="100%" height="500px" title="Trailer"></iframe>
+                <iframe 
+                    ref={iframeRef} 
+                    allowFullScreen 
+                    frameBorder="0"
+                    width="100%" 
+                    className='modal__trailer' 
+                    title="Trailer"
+                >
+                </iframe>
             </ModalContent>
         </Modal>
     )

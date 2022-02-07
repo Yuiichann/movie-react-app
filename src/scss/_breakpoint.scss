@@ -11,4 +11,10 @@
         @content;
     }
 }
+
+@mixin special {
+    @media only screen and (max-width: $mobile-width) and (min-width: $special-width) {
+        @content;
+    }
+}
   

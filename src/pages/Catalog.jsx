@@ -1,16 +1,29 @@
+import { category as cate } from 'api/tmdbApi';
+import MovieGrid from 'components/MovieGrid/MovieGrid';
+import PageHeader from 'components/PageHeader/PageHeader';
 import React from 'react';
-import PropTypes from 'prop-types';
-import HeroSlide from 'components/HeroSlide/HeroSlide';
+import { useParams } from 'react-router-dom';
 
 Catalog.propTypes = {
     
 };
 
 function Catalog(props) {
+
+    const { category } = useParams();
+
     return (
-        <div>
-            <HeroSlide page="2" />
-        </div>
+        <>
+            <PageHeader>
+                {category === cate.movie ? 'Movies' : 'TV Series'}
+            </PageHeader>
+            
+            <div className="container">
+                <div className="section mb-3">
+                    <MovieGrid category={category} />
+                </div>
+            </div>
+        </>
     );
 }
 

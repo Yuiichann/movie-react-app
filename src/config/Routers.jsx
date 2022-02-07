@@ -1,8 +1,8 @@
+import Detail from 'pages/Detail/Detail';
 import React from 'react';
 import { Route, Routes } from 'react-router';
 
 import Catalog from '../pages/Catalog'
-import Detail from '../pages/Detail';
 import Home from '../pages/Home';
 
 function Routers(props) {
@@ -12,15 +12,18 @@ function Routers(props) {
                 path=":category/search/:keyword" 
                 element={<Catalog />}
             />
-              <Route 
+            
+            <Route 
                 path=":category/:id" 
                 element={<Detail />}
             />
-              <Route 
+
+            <Route 
                 path=":category" 
                 element={<Catalog />}
             />
-              <Route 
+
+            <Route 
                 path="/" 
                 exact
                 element={<Home />}

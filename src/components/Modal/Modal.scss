@@ -48,4 +48,16 @@
         opacity: 1;
         transform: translateY(0);
     }
+
+    &__trailer {
+        height: 500px;
+
+        @include tablet {
+            height: 350px;
+        }
+
+        @include mobile {
+            height: 200px;
+        }
+    }
 }
